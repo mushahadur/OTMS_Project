@@ -1,47 +1,53 @@
 @extends('admin.master')
 
 @section('body')
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card">
-                        <div class="card-header"><h1>This is Add  Category Form</h1></div>
-                        <div class="card-body">
-                            <form action="{{route('category.create')}}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-group row">
-                                    <label class="col-form-label col-md-4">Category Name</label>
-                                    <div class="col-md-8">
-                                        <input type="text" name="name" class="form-control" placeholder="Enter Category Name" />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-form-label col-md-4">Category Description</label>
-                                    <div class="col-md-8">
-                                        <textarea class="form-control" id="" name="description" cols="30" rows="4"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-form-label col-md-4">Image</label>
-                                    <div class="col-md-8">
-                                        <input type="file" name="image" class="form-control" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label class="col-form-label col-md-8"></label>
-                                    <div class="col-md-4">
-                                        <input type="submit" name="addTeacherBtn" class="btn btn-outline-primary btn-block" value="Add New Category"/>
-                                    </div>
-                                </div>
-                            </form>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Add Category Form</h4>
+                    <p class="text-center text-success">{{Session::get('message')}}</p>
+                    <form action="{{route('category.create')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group row mb-4">
+                            <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Category Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="horizontal-firstname-input" name="name"/>
+                            </div>
                         </div>
-                    </div>
+                        <div class="form-group row mb-4">
+                            <label for="horizontal-password-input3" class="col-sm-3 col-form-label">Description</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" id="horizontal-password-input3" name="description"></textarea>
+                            </div>
+                        </div>
 
+                        <div class="form-group row mb-4">
+                            <label for="horizontal-password-input4" class="col-sm-3 col-form-label">Image</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control-file" id="horizontal-password-input4" name="image"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-4">
+                            <label for="" class="col-sm-3 col-form-label">Publication Status</label>
+                            <div class="col-sm-9">
+                                <label><input type="radio" name="status" value="1"/> Published</label>
+                                <label><input type="radio" name="status" value="0"/> Unpublished</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-end">
+                            <div class="col-sm-9">
+                                <div>
+                                    <button type="submit" class="btn btn-primary w-md">Create New Category</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
 @endsection
+

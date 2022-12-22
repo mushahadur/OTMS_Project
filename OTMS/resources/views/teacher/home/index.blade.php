@@ -1,6 +1,11 @@
 @extends('teacher.master')
+
 @section('body')
-    <section>
-        <h1>Teacher Deshboard</h1>
-    </section>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <h1>Teacher Dashboard</h1>
+        </div>
+    </div>
+</div>
 @endsection

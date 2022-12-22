@@ -35,3 +35,8 @@
     padding-left: 40px;
     padding-right: 40px;
 }
+
+.my-caption
+{
+    background-color: rgba(0,0,0, 0.5);
+}

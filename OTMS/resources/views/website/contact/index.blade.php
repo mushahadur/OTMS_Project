@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row bg-dark">
                 <div class="col">
-                    <div class="card card-body border-0 text-center text-uppercase">
+                    <div class="card card-body border-dark text-center text-uppercase">
                         <h3>Contact Us</h3>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-md-10">
                             <h4>Email</h4>
-                            <p>pulock.bd@gmail.com</p>
+                            <p>sarkermajid21.bd@gmail.com</p>
                         </div>
                     </div>
                 </div>

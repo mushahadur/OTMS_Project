@@ -1,118 +1,36 @@
 @extends('website.master')
 
-@section('body')
+@section('title')
+    Training Category
+@endsection
 
+
+@section('body')
     <section class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <h1 class="text-center border">This is Category Page</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="px-5">
-        <div class="container py-5">
             <div class="row bg-danger">
                 <div class="col">
                     <div class="card card-body text-center border-0">
-                        <h3>Recent Published Course</h3>
+                        <h3 class="">{{ isset($courses[0]->category) ? $courses[0]->category->name.' Training Course' : 'No course available' }}</h3>
                     </div>
                 </div>
             </div>
             <div class="row mt-3">
+                @foreach($courses as  $course)
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img src="{{ asset('/') }}website/img/laravel.jpg" alt="">
+                        <img src="{{asset($course->image)}}" alt="" class=""/>
                         <div class="card-body">
-                            <h4>Php With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10 March 2022</p>
+                            <h4><a href="{{route('training.detail', ['id' => $course->id])}}" class="text-decoration-none text-dark">{{$course->title}}</a></h4>
+                            <p class="mb-0">TK. {{$course->fee}}</p>
+                            <p class="">Starting Date: {{$course->starting_date}}</p>
                             <hr/>
-                            <a href="" class="btn btn-outline-success">Read More</a>
+                            <a href="{{route('training.detail', ['id' => $course->id])}}" class="btn btn-success">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/laravel.jpg" alt="">
-                        <div class="card-body">
-                            <h4>Php With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10 March 2022</p>
-                            <hr/>
-                            <a href="" class="btn btn-outline-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/laravel.jpg" alt="">
-                        <div class="card-body">
-                            <h4>Php With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10 March 2022</p>
-                            <hr/>
-                            <a href="" class="btn btn-outline-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
-
-    <section class="px-5">
-        <div class="container">
-            <div class="row bg-light">
-                <div class="col">
-                    <div class="card card-body text-center border-0">
-                        <h3>Popular Course</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/h3.gif" alt="">
-                        <div class="card-body">
-                            <h4>Php With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10 March 2022</p>
-                            <hr/>
-                            <a href="" class="btn btn-outline-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/h3.gif" alt="">
-                        <div class="card-body">
-                            <h4>Php With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10 March 2022</p>
-                            <hr/>
-                            <a href="" class="btn btn-outline-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <img src="{{ asset('/') }}website/img/h3.gif" alt="">
-                        <div class="card-body">
-                            <h4>Php With Laravel Framework</h4>
-                            <p class="mb-0">TK. 25000</p>
-                            <p>Starting Date: 10 March 2022</p>
-                            <hr/>
-                            <a href="" class="btn btn-outline-success">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
 @endsection

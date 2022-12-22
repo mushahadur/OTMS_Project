@@ -14,14 +14,14 @@
     <link rel="shortcut icon" href="{{asset('/')}}admin/assets/images/favicon.ico">
 
     <!-- DataTables -->
-    <link href="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap Css -->
-    <link href="{{asset('/')}}admin/assets/css/bootstrap.min.css"  rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="{{asset('/')}}admin/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
@@ -404,7 +404,7 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="rounded-circle header-profile-user" src="{{asset('/')}}admin/assets/images/users/avatar-1.jpg"
                              alt="Header Avatar">
-                        <span class="d-none d-xl-inline-block ml-1">PULOCK</span>
+                        <span class="d-none d-xl-inline-block ml-1">Henry</span>
                         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -414,7 +414,7 @@
                         <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
                         <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit(); ">
+                        <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
                             <i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout
                         </a>
                         <form action="{{route('logout')}}" method="POST" id="logoutForm">
@@ -444,11 +444,19 @@
 
                     <li>
                         <a href="javascript: void(0);" class="waves-effect">
-                            <i class="bx bx-home-circle"></i><span class="badge badge-pill badge-info float-right">03</span>
+                            <i class="bx bx-home-circle"></i>
                             <span>Dashboard</span>
                         </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="bx bx-layout"></i>
+                            <span> Category Module </span>
+                        </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="index.html">Default</a></li>
+                            <li><a href="{{route('category.add')}}">Add Category</a></li>
+                            <li><a href="{{route('category.manage')}}">Manage Category</a></li>
                         </ul>
                     </li>
 
@@ -458,20 +466,9 @@
                             <span>Teacher Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{route('teacher.index')}}">Teachers</a></li>
-                            <li><a href="{{route('teacher.create')}}">Add Teacher</a></li>
+                            <li><a href="{{route('teacher.add')}}">Add Teacher</a></li>
                             <li><a href="{{route('teacher.manage')}}">Manage Teacher</a></li>
-
                         </ul>
-                    </li>
-
-                    <li class="menu-title">Apps</li>
-
-                    <li>
-                        <a href="calendar.html" class=" waves-effect">
-                            <i class="bx bx-calendar"></i>
-                            <span>Calendar</span>
-                        </a>
                     </li>
 
 
@@ -479,11 +476,10 @@
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-store"></i>
-                            <span>Category Module</span>
+                            <span>Course Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="{{route('category.add')}}"> Add Category</a></li>
-                            <li><a href="{{route('category.manage')}}">Manage Category</a></li>
+                            <li><a href="{{route('admin.manage-course')}}">Manage Course</a></li>
                         </ul>
                     </li>
 
@@ -493,7 +489,7 @@
                             <span>Student Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="crypto-wallet.html">Manage Student</a></li>
+                            <li><a href="{{route('admin.manage-student')}}">Manage Student</a></li>
                         </ul>
                     </li>
 
@@ -503,7 +499,7 @@
                             <span>Enroll Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="email-inbox.html">Manage Enroll</a></li>
+                            <li><a href="{{route('admin.manage-enroll')}}">Manage Enroll</a></li>
                         </ul>
                     </li>
 
@@ -513,8 +509,8 @@
                             <span>User Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="invoices-list.html">Add User</a></li>
-                            <li><a href="invoices-detail.html">Manage User</a></li>
+                            <li><a href="{{route('admin.add-user')}}">Add User</a></li>
+                            <li><a href="{{route('admin.manage-user')}}">Manage USer</a></li>
                         </ul>
                     </li>
 
@@ -525,7 +521,7 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="projects-grid.html">Manage Company</a></li>
-                            <li><a href="projects-list.html">Manage About Us</a></li>
+                            <li><a href="projects-list.html">Manage About US</a></li>
                             <li><a href="projects-list.html">Manage Contact</a></li>
                         </ul>
                     </li>
@@ -543,8 +539,7 @@
 
         <div class="page-content">
             <div class="container-fluid">
-
-@yield('body')
+                @yield('body')
             </div>
             <!-- container-fluid -->
         </div>
@@ -708,49 +703,41 @@
 <div class="rightbar-overlay"></div>
 
 <!-- JAVASCRIPT -->
-<script src="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//jquery/jquery.min.js"></script>
-<script src="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//metismenu/metisMenu.min.js"></script>
-<script src="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//simplebar/simplebar.min.js"></script>
-<script src="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//node-waves/waves.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/jquery/jquery.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/node-waves/waves.min.js"></script>
 
 <!-- apexcharts -->
-<script src="{{asset('/')}}admin/{{asset('/')}}admin/assets/libs//apexcharts/apexcharts.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/apexcharts/apexcharts.min.js"></script>
 
 <script src="{{asset('/')}}admin/assets/js/pages/dashboard.init.js"></script>
 
-<!-- JAVASCRIPT -->
-<script src="{{asset('/')}}admin/assets/libs//jquery/jquery.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//metismenu/metisMenu.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//simplebar/simplebar.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//node-waves/waves.min.js"></script>
-
 <!-- Required datatable js -->
-<script src="{{asset('/')}}admin/assets/libs//datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
 <!-- Buttons examples -->
-<script src="{{asset('/')}}admin/assets/libs//datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//jszip/jszip.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//pdfmake/build/pdfmake.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//pdfmake/build/vfs_fonts.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//datatables.net-buttons/js/buttons.colVis.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/jszip/jszip.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/pdfmake/build/pdfmake.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/pdfmake/build/vfs_fonts.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
 
 <!-- Responsive examples -->
-<script src="{{asset('/')}}admin/assets/libs//datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="{{asset('/')}}admin/assets/libs//datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="{{asset('/')}}admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
 <!-- Datatable init js -->
 <script src="{{asset('/')}}admin/assets/js/pages/datatables.init.js"></script>
 
-<script src="{{asset('/')}}admin/assets/js/app.js"></script>
-
 <!-- App js -->
 <script src="{{asset('/')}}admin/assets/js/app.js"></script>
 </body>
+
 
 <!-- Mirrored from themesbrand.com/skote/layouts/vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 08 Sep 2020 15:07:20 GMT -->
 </html>
