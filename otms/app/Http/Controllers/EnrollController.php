@@ -74,4 +74,10 @@ class EnrollController extends Controller
     {
         return view('website.enroll.complete-enroll', ['enroll' => Enroll::find($id)]);
     }
+
+    public function getEmail(){
+        $email = $_GET['email'];
+        $this->student = Student::where('email', $email)->first();
+        return response()->json($this->student);
+    }
 }

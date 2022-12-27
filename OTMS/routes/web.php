@@ -32,6 +32,8 @@ Route::get('/training-category/{id}', [HomeController::class, 'categoryTraining'
 Route::get('/all-training', [HomeController::class, 'allTraining'])->name('training.all');
 Route::get('/training-detail/{id}', [HomeController::class, 'trainingDetail'])->name('training.detail');
 
+Route::get('/get-student-email-by-email', [EnrollController::class, 'getEmail'])->name('training.get-student-email-by-email');
+
 Route::get('/training-enroll/{id}', [EnrollController::class, 'index'])->name('training.enroll');
 Route::post('/training-new-enroll/{id}', [EnrollController::class, 'newEnroll'])->name('training.new-enroll');
 Route::get('/training-complete-enroll/{id}', [EnrollController::class, 'completeEnroll'])->name('training.complete-enroll');
