@@ -1,10 +1,10 @@
-### Hi there 👋, Online Training Management System
+### Hi there 👋, Mushahedur Rahman Khan
 #### This is my front-end and back-end development in PHP with Laravel Framework
 ![This is my front-end and back-end development in PHP with Laravel Framework](https://www.linkedin.com/in/mushahadur/overlay/background-image/)
 
 I am a full-stack web developer. I build my online training management system.
 
-Skills: PHP/Laravel/Bootstrap/jQuery / JS / HTML / CSS
+Skills: PHP/Laravel/Bootstrap/jQuery /JS / HTML / CSS
 
 - 🔭 I’m currently working on this page. 
 - 🌱 I’m currently learning JavaScript 
