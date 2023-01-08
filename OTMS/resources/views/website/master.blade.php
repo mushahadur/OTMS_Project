@@ -46,15 +46,15 @@
 
     <footer class="py-5 bg-dark">
         <div class="container">
-            <div class="row">
+            <div class="row text-white">
                 <div class="col-md-4">
-                    <div class="card card-body h-100">
+                    <div class="card card-body h-100 bg-dark border-0">
                         <h1>OTMS</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet at commodi, consequuntur delectus, deleniti dolorum ea eius facere fuga in laborum nisi nostrum, obcaecati ratione recusandae saepe sit suscipit ut.</p>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div class="card card-body h-100">
+                    <div class="card card-body bg-dark h-100 border-0">
                         <h3>Popular Training</h3>
                         <ul class="navbar-nav">
                             <li><a href="" class="nav-link">PHP With Laravel Framework</a></li>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="card card-body h-100">
+                    <div class="card card-body bg-dark h-100 border-0">
                         <h3>Contact With US</h3>
                         <address>
                             House No - 420, Road No - 520, Dhanmondi, Dhaka - 1215.
@@ -82,7 +82,7 @@
             <hr class="text-white mt-4"/>
             <div class="row">
                 <div class="col">
-                    <p class="text-white text-center mb-0">copyright@basis_seip_php_batch_13 all right reserved.</p>
+                    <p class="text-white text-center mb-0">copyright@mushahedur all right reserved.</p>
                 </div>
             </div>
         </div>
